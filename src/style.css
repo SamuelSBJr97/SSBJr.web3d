@@ -187,6 +187,86 @@ button:hover {
   line-height: 1.4;
 }
 
+.ride-hud {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ride-hud__panel,
+.ride-hud__prompt {
+  background: rgba(10, 13, 20, 0.68);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px 18px;
+  max-width: 340px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.ride-hud__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.ride-hud__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.ride-hud__stats div,
+.ride-hud__biome {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.ride-hud__stats strong,
+.ride-hud__biome strong {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.ride-hud__message {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.ride-hud__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.ride-hud__buttons button {
+  pointer-events: auto;
+  flex: 1;
+  border-radius: 14px;
+  padding: 12px 0;
+  background: var(--bg-accent);
+  color: var(--text-primary);
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+
+.ride-hud__buttons button:hover {
+  box-shadow: 0 0 18px rgba(241, 91, 71, 0.25);
+  border-color: rgba(241, 91, 71, 0.4);
+}
+
 .immersive .topbar,
 .immersive .sidebar,
 .immersive .stage__overlay {
@@ -239,5 +319,14 @@ button:hover {
 
   .stage__overlay {
     max-width: 280px;
+  }
+
+  .ride-hud {
+    padding: 18px;
+  }
+
+  .ride-hud__panel,
+  .ride-hud__prompt {
+    max-width: 100%;
   }
 }
